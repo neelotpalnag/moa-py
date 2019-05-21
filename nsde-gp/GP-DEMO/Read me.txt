@@ -1,0 +1,5 @@
+The GP-DEMO algorithm is implemented as a part of the jMetal project (http://jmetal.sourceforge.net/) that includes a lot of algorithms.
+The paramaters of the run, algorithm and the chosen optimization problem is set through the INPUT.txt
+The program is run with run2.bat, so that the seed and various problems can be run with only one run.
+
+The source code of the algorithm (and also all other algorithms) is in the source.zip

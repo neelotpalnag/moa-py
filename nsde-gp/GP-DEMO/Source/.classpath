@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="lib/gpml.jar"/>
+	<classpathentry kind="lib" path="lib/javabuilder.jar" sourcepath="lib/javabuilder.jar"/>
+	<classpathentry kind="lib" path="lib/weka-src.jar"/>
+	<classpathentry kind="lib" path="lib/weka.jar" sourcepath="C:/Program Files/Weka-3-6/weka.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/spgp.jar"/>
+	<classpathentry kind="lib" path="D:/Doktorat/RandomForest/JRI/JRI.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

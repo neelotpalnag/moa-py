@@ -1,0 +1,24 @@
+call run.bat Osyczka %1
+rem call run.bat Poloni %1
+rem call run.bat Srinivas %1
+rem call run.bat Tanaka %1
+rem call run.bat Viennet2 %1
+rem call run.bat Fonseca %1
+rem call run.bat Golinski %1
+rem call run.bat Kursawe %1
+rem call run.bat WFG1 %1
+rem call run.bat WFG2 %1
+rem call run.bat WFG3 %1
+rem call run.bat WFG4 %1
+rem call run.bat WFG5 %1
+rem call run.bat WFG6 %1
+rem call run.bat WFG7 %1
+rem call run.bat WFG8 %1
+rem call run.bat WFG9 %1
+rem call run.bat DTLZ1 %1
+rem call run.bat DTLZ2 %1
+rem call run.bat DTLZ3 %1
+rem call run.bat DTLZ4 %1
+rem call run.bat DTLZ5 %1
+rem call run.bat DTLZ6 %1
+rem call run.bat DTLZ7 %1

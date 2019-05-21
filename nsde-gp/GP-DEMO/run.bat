@@ -1,0 +1,1 @@
+java -jar Metka17.jar input.txt Algorithm.name GPDEMO Algorithm.maxEvaluations 10000 Seed %2 Problem.name %1 Output.logFileName %1\Log.%1.%2.GPDEMO.txt Output.frontFileName %1\Front.%1.%2.GPDEMO.txt Output.genFileName %1\Generation.%1.%2.GPDEMO.txt

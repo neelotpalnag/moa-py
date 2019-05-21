@@ -1,0 +1,519 @@
+@ ------------------------------------------------------
+@ Initialization file for the program init.java
+@ author: Miha Mlakar & Rok Prodan
+@ created: 14.01.2012
+@ last change: $date$
+@
+@
+
+
+@ Random generator seed
+@ ---------------------
+
+Seed 11
+
+
+
+@@@@@ ALGORITHM PARATMTERS @@@@@
+
+@ Name of the algorithm
+@ ---------------------
+@ DEMO ...............	
+@ ExhaustiveSearch ...	
+@ GDE3 ...............	
+@ IBEA ...............	
+@ NSGAII .............	
+@ RandomSearch .......	
+@ SPEA2 ..............
+@ DEMONN .............	
+@ DEMONNGP .............
+@ GPDEMO ....
+@ DemoUncertaintyCompare
+@ MetaDEMOUncertanty
+@ ...
+	
+Algorithm.name GPDEMO
+
+@ Model (global) name
+@ GP ..........
+@ NN ..........
+@ SPGP ........
+@ RF ..........
+@ ConditionalRF ..........
+@ ---------------------------------------
+
+Model.name GP
+
+@ Model (global) active set size limit
+@ Positive integer
+@ ---------------------------------------
+
+Model.activeSet 250
+
+
+@ Model (global) window size for SPGP
+@ Positive integer
+@ ---------------------------------------
+
+Model.windowSize 10000
+
+
+
+@ Number of generations without reseting base vectors of SPGP
+@ Positive integer
+@ ---------------------------------------
+
+Model.afterWhatnumberOfGenerationsResetOfBaseVectors 1
+ 
+
+@ Model (global) learning type
+@ Positive integer
+@ 0 = learn from the beginning
+@ 1 = update previously learned hyperparameters
+@ ---------------------------------------
+
+Model.learningType 0
+
+
+@ Choose if for determening when to update the model the number of gen or the number of exac. eval. solutions is used
+@ 0 = use number of exactly evaluatred solutions
+@ 1 = use number of generations
+@ ---------------------------------------
+
+Model.useGenerationsForDeterminingTheUpdates 0
+
+
+@ Number of generations that use the same model. After that number of generations the model is trained/updated again
+@ Positive integer
+@ ---------------------------------------
+
+Model.afterWhatnumberOfExactEvalSolutionsUpdateTheModel 500
+
+
+
+@ Number of generations that use the same model. After that number of generations the model is trained/updated again
+@ Positive integer
+@ ---------------------------------------
+
+Model.afterWhatnumberOfGenerationsUpdateTheModel 100
+
+
+@ How many trees are build in a random forest
+@ Positive integer
+@ ---------------------------------------
+
+RF.onOfTrees 1000
+
+
+@ Model (global) covariance function
+@ covSEard (default)
+@ covSEiso
+@ covRQard
+@ covRQiso
+@ covMater3iso
+@ covMatern5iso
+@ ---------------------------------------
+
+Model.covfunc covSEard
+
+@ Model (global) hyperparameter values
+@ (set only if fixed hyperparameter values are needed)
+@ ---------------------------------------
+
+@Model.hyp 0;0;0;0;0 1;1;1;1;1
+
+@ Model (global) maximum number of optimizaton iterations
+@ if it is positive, it gives the maximum number of line searches,
+@ if negative its absolute gives the maximum allowed number of function evaluations
+@ ---------------------------------------
+
+Model.maxOptIter -300
+
+@ Model (global) optimization threshold
+@ abs((previous - current) / current)
+@ ---------------------------------------
+
+Model.optThreshold -1
+
+@ Local model name (non-obligatory)
+@ GP ..........
+@ NN ..........
+@ SPGP ........
+@ [empty] .....
+@ ---------------------------------------
+
+ModelLocal.name [empty]
+
+@ Local model active set size limit
+@ Positive integer
+@ ---------------------------------------
+
+ModelLocal.activeSet 400
+
+@ Model (global) learning type
+@ Positive integer
+@ 0 = learn from the beginning
+@ 1 = update previously learned hyperparameters
+@ ---------------------------------------
+
+ModelLocal.learningType 0
+
+
+@ Choose if for determening when to update the model the number of gen or the number of exac. eval. solutions is used
+@ 0 = use number of exactly evaluatred solutions
+@ 1 = use number of generations
+@ ---------------------------------------
+
+ModelLocal.useGenerationsForDeterminingTheLocalModelUpdates 0
+
+
+
+@ Number of generations that use the same model. After that number of generations the model is trained/updated again
+@ Positive integer
+@ ---------------------------------------
+
+ModelLocal.afterWhatnumberOfExactEvalSolutionsUpdateTheLocalModel 100
+
+
+
+@ Number of generations that use the same model. After that number of generations the model is trained/updated again
+@ Positive integer
+@ ---------------------------------------
+
+ModelLocal.afterWhatnumberOfGenerationsUpdateTheLocalModel 5
+
+
+@ Model (local) covariance function
+@ covSEard (default)
+@ covSEiso
+@ covRQard
+@ covRQiso
+@ covMater3iso
+@ covMatern5iso
+@ ---------------------------------------
+
+ModelLocal.covfunc covSEard
+
+@ Model (local) hyperparameter values
+@ (set only if fixed hyperparameter values are needed)
+@ ---------------------------------------
+
+@ModelLocal.hyp 0;0;0;0;0 1;1;1;1;1
+
+@ Model (local) maximum number of optimizaton iterations
+@ if it is positive, it gives the maximum number of line searches,
+@ if negative its absolute gives the maximum allowed number of function evaluations
+@ ---------------------------------------
+
+ModelLocal.maxOptIter -1300
+
+@ Model (local) optimization threshold
+@ abs((previous - current) / current)
+@ ---------------------------------------
+
+ModelLocal.optThreshold 0.0000001
+
+@ Number of allowed exeactly evaluated solutions
+@ ---------------------------------------
+
+Algorithm.limitNumberForExactEvaluations 10000
+
+
+@ Number of individuals in the population
+@ ---------------------------------------
+
+Algorithm.populationSize 100
+
+@ Maximum number of evaluated individuals (stopping criterion)
+@ ------------------------------------------------------------
+
+Algorithm.maxEvaluations 10000
+
+
+@ Crossover probability
+@ ---------------------
+
+Algorithm.crossoverProbability 0.3
+
+
+@ Mutation probability
+@ ---------------------
+
+Algorithm.mutationProbability 1.0
+
+
+@ Distribution index
+@ ---------------------
+
+Algorithm.distributionIndex 20.0
+
+@ Type of selection procedure
+@ ---------------------------
+@ 0 ... as in NSGA-II
+@ 1 ... as in IBEA
+@ 2 ... as in SPEA 2
+
+Algorithm.selectionProcedure 0
+
+
+@ The elitism R in NSGA-II's selection
+@ ------------------------------------
+
+Algorithm.elitism 0.5
+
+
+@ Indicator in the IBEA's selection
+@ ---------------------------------
+@ 0 = esp
+@ 1 = hyp
+
+Algorithm.indicator 1
+
+
+
+@@@@@ DEMONN(GP) PARAMETERS @@@@@
+
+@ Number of generations for exact evaluation
+@ ---------------------------------------
+
+DEMONN.exactEvaluation 3
+
+
+@ Number of generations for apporximate evaluation
+@ ---------------------------------------
+
+DEMONN.approximateEvaluation 7
+
+
+
+@@@@@ IBEA PARAMETERS @@@@@
+
+
+@ Rho in the IBEA's selection using hypervolume
+@ ---------------------------------------------
+
+IBEA.rho 2
+
+
+@ Kappa in the IBEA's selection using hypervolume
+@ -----------------------------------------------
+
+IBEA.kappa 0.05
+
+
+
+@@@@@ AbYSS PARAMETERS @@@@@
+
+@ Improvement rounds
+@ ------
+
+AbYSS.improvementRounds 1
+
+
+
+@@@@@ OMOPSO PARAMETERS @@@@@
+
+@ Max iterations
+@ ------
+
+OMOPSO.maxIterations 250
+
+@ Perturbation index
+@ ------
+
+OMOPSO.perturbationIndex 0.5
+
+
+
+@@@@@ ElitismES/NonElitismES PARAMETERS @@@@@
+
+@ Bits
+@ ------
+
+ElitismES.bits 512
+
+@ Mu
+@ ------
+
+ElitismES.mu 1
+
+@ Lambda (lambda must be divisible by mu)
+@ ------
+
+ElitismES.lambda 10
+
+
+
+@@@@@ DEMO/DE PARAMETERS @@@@@
+
+@ Weight
+@ ------
+
+DEMO.weight 0.5
+
+
+
+@@@@@ PROBLEM PARAMETERS @@@@@
+
+@ Name of the problem
+@ -------------------
+@ DTLZ1 .............	
+@ DTLZ1a.............
+@ DTLZ2 .............	
+@ DTLZ3 .............	
+@ DTLZ4 .............	
+@ DTLZ5 .............	
+@ DTLZ6 .............	
+@ DTLZ7 .............	
+@ Kursawe ...........
+@ Golinski ..........
+@ Osyczka ...........
+@ BNH ...............
+@ WFG1 ..............
+@ Sphere ............
+@ Fonseca ...........
+@ ZDT1 ..............
+@ Extern_Evaluator ..	
+@ StoreSteel
+@ EKGSimulator ......
+@ ...
+
+Problem.name Poloni
+
+@ Number of decision variables
+@ ----------------------------
+
+Problem.numberOfVariables 4
+
+
+@ Lower limit of variables (only needed for the extern evaluation)
+@ ---------------------------------------------------------------------
+
+Variables.lowerLimit  1.5	 33   	10 25
+
+
+@ Upper limit of variables (only needed for the extern evaluation)
+@ ---------------------------------------------------------------------
+
+Variables.upperLimit 1.99	35	40 65
+
+
+@ Discretization step for variables (only needed for the extern evaluation)
+@ 0.01	1   	5	5
+@ 0.0001	0.0001	0.0001	0.0001
+@ ---------------------------------------------------------------------
+
+Variables.discretizationStep  0.0001	0.0001	0.0001	0.0001
+
+
+@ Number of criterion functions (only needed for the extern evaluation)
+@ ---------------------------------------------------------------------
+
+Problem.numberOfObjectives 3
+
+
+@ Number of Constraints (only needed for the extern evaluation)
+@ ---------------------------------------------------------------------
+
+Problem.numberOfConstraints 0
+
+
+
+@ Number of Features (only needed for the extern evaluation)
+@ ---------------------------------------------------------------------
+
+Problem.numberOfFeatures 3
+
+
+@ Upper limit of objectives (for hypervolume evaluation) (only needed for the extern evaluation)
+@ ---------------------------------------------------------------------
+
+Problem.hypervolumeCalculationLimits	1	2	15
+
+
+@ Step
+@ ----
+
+Problem.step 1.0
+
+
+
+@@@@@ PARAMETERS FOR THE OUTPUT @@@@@
+
+@ Name of the log file
+@ --------------------
+
+Output.logFileName Log.txt
+
+@ Type of output for the log file
+@ ------------------------------
+@ 0 ...	no output
+@ 1 ... overwrite
+@ 2 ... append
+
+Output.logMode 1
+
+
+@ Name of the file with fronts
+@ ----------------------------
+
+Output.frontFileName Front.txt
+
+
+@ Type of output for the file with fronts
+@ ---------------------------------------
+@ 0 ...	no output
+@ 1 ... overwrite
+@ 2 ... append
+
+Output.frontMode 1
+
+
+@ Generation, at which the best front is output (if k,
+@ the fronts are written at every k-th generation)
+@ ------------------------------------------------------
+
+Output.frontGen	1
+
+
+@ Whether the output of fronts includes information on the
+@ decision vectors
+@ --------------------------------------------------------
+@ 0 ... output only the objective vectors
+@ 1 ... output decision and objective vectors
+
+Output.frontFormat 1
+
+
+@ Name of the file with generation statistics
+@ -------------------------------------------
+
+Output.genFileName Generation.txt
+
+@ Type of output for the file with generation statistics
+@ ------------------------------
+@ 0 ...	no output
+@ 1 ... overwrite
+@ 2 ... append
+
+Output.genMode 1
+
+@ method for calculating the hypervolume 
+@ 0 = do not calculate the hypervolume and do not estimate it
+@ 1 = calculate the hypervolume exactly
+@ ------------------------------
+Output.hypervolume 1
+
+
+@Sim in
+Simulator.simIn D:\StoreSteel\Optimizacija\withSimulator\files\sim_in.txt
+
+@Sim out
+Simulator.simOut D:\StoreSteel\Optimizacija\withSimulator\files\sim_out.txt
+
+@ executable file for function evaluation (only needed for the extern evaluation)
+Simulator.command D:/StoreSteel/Optimizacija/withSimulator/Wrapper_SS.bat
+
+@
+@ -----------------------------------------------------------------
+@ end of file
